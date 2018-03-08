@@ -1,10 +1,11 @@
 const tap = require('tap');
 
 self = { xxx: 1 };
+self.self = self;
 
 const g = require('..');
 
-tap.test('complicated tests', (t) => {
+tap.test('more complicated tests', (t) => {
   t.plan(3);
 
   t.equal(typeof xxx, 'undefined', 'xxx should not be defined');
