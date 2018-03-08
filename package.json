@@ -1,0 +1,38 @@
+{
+  "name": "the-global-object",
+  "version": "0.0.0",
+  "description": "The global object in Node and in the browser",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint *.js && echo LINTING OK || (echo LINTING ERROR; false)",
+    "modules": "npm ls 2>&1 && echo NPMLS OK || echo NPMLS ERROR",
+    "versions": "echo SHELL /bin/sh: && /bin/sh --version && echo SHELL /bin/bash: && /bin/bash --version && echo NODE: && node -v && echo NPM: && npm -v && node -e 'console.log(process.versions);' && echo VERSIONS OK || echo VERSIONS ERROR",
+    "sysinfo": "uname -a && cat /proc/meminfo && df -h . && echo SYSINFO OK || echo SYSINFO ERROR",
+    "spec": "tap tests/**/*.js && echo SPEC TESTS OK || (echo SPEC TESTS ERROR; false)",
+    "test": "npm run versions && npm run lint && npm run spec && echo NPM TEST OK || (echo NPM TEST ERROR; false)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsp/node-the-global-object.git"
+  },
+  "keywords": [
+    "global",
+    "object",
+    "global-object",
+    "window",
+    "worker",
+    "self"
+  ],
+  "author": "Rafał Pocztarski <r.pocztarski@gmail.com> (http://pocztarski.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsp/node-the-global-object/issues"
+  },
+  "homepage": "https://github.com/rsp/node-the-global-object#readme",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "tap": "^11.1.2"
+  }
+}
