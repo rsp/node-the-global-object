@@ -19,8 +19,11 @@
     "global",
     "object",
     "global-object",
+    "the-global-object",
     "window",
     "worker",
+    "workers",
+    "globals",
     "self"
   ],
   "author": "Rafał Pocztarski <r.pocztarski@gmail.com> (http://pocztarski.com/)",
