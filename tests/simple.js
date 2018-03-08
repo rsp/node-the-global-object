@@ -3,7 +3,7 @@ const tap = require('tap');
 const g = require('..');
 
 tap.test('simple tests', (t) => {
-  t.plan();
+  t.plan(3);
 
   t.equal(typeof xxx, 'undefined', 'xxx should not be defined');
 
