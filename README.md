@@ -11,7 +11,7 @@ The Global Object
 [![Downloads][downloads-img]][stats-url]
 [![License][license-img]][license-url]
 
-The global object in Node or in the browser.
+Returns the global object in Node or in the browser, including the web worker.
 
 Hopefully it will no longer be needed when the TC39 global proposal is implemented, see:
 

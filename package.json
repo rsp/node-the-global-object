@@ -1,7 +1,7 @@
 {
   "name": "the-global-object",
   "version": "1.0.0",
-  "description": "The global object in Node and in the browser",
+  "description": "Returns the global object in Node or in the browser, including the web worker.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint *.js && echo LINTING OK || (echo LINTING ERROR; false)",
@@ -23,6 +23,10 @@
     "window",
     "worker",
     "workers",
+    "webworker",
+    "webworkers",
+    "web-worker",
+    "web-workers",
     "globals",
     "self"
   ],
