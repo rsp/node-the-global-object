@@ -1,6 +1,6 @@
 {
   "name": "the-global-object",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Returns the global object in Node or in the browser, including the web worker.",
   "main": "index.js",
   "scripts": {
