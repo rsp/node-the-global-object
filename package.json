@@ -1,6 +1,6 @@
 {
   "name": "the-global-object",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The global object in Node and in the browser",
   "main": "index.js",
   "scripts": {
