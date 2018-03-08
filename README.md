@@ -13,6 +13,11 @@ The Global Object
 
 The global object in Node or in the browser.
 
+Hopefully it will no longer be needed when the TC39 global proposal is implemented, see:
+
+- https://github.com/tc39/proposal-global
+- http://littledan.github.io/global.html
+
 How it works
 -
 Note that the only reliable way to get the global object is:
@@ -30,16 +35,8 @@ as a real global object would, with some additional checks.
 This is important to not return a wrong object if there is a global variable
 called `self` or `window` defined. This module does the following checks:
 
-- makes sure that the global object has a circular reference to itself
-- makes sure that the global object has own property `Object` equal to global `Object`
-
-Hopefully it will no longer be needed when the TC39 global proposal is implemented:
-
-- https://github.com/tc39/proposal-global
-
-See also:
-
-- http://littledan.github.io/global.html
+- the object has a circular reference to itself
+- the object has properties `Array` and `setInterval` equal to the global ones
 
 Issues
 ------
