@@ -18,25 +18,34 @@ Hopefully it will no longer be needed when the TC39 global proposal is implement
 - https://github.com/tc39/proposal-global
 - http://littledan.github.io/global.html
 
-How it works
+Problems with `Function()`
 -
-Note that the only reliable way to get the global object is:
+The only reliable way to get the global object is:
 ```js
-Function('return this')();
+const theGlobalObject = Function('return this')();
 ```
 but it breaks the Chrome App Content Security Policy, see:
 
 - https://github.com/paulmillr/es6-shim/issues/301
 
-This module checks to see if there is `self`, `window` or `global` variable
+How this module works
+-
+This module checks to see if there is a global variable called
+`self`, `window` or `global`
 and returns the first one that has a reference to itself with the same name,
 as a real global object would, with some additional checks.
 
-This is important to not return a wrong object if there is a global variable
-called `self` or `window` defined. This module does the following checks:
+This is important to not return a wrong object if there happens to be a global variable
+called `self` or `window` defined, but it's not the global object itself.
 
-- the object has a circular reference to itself
+This module does the following checks to make sure that:
+
+- the object has a circular reference to itself with the correct name
 - the object has properties `Array` and `setInterval` equal to the global ones
+
+The `Array` and `setInterval` are chosen arbitrarily as examples of names that are
+unlikely to be there by accident and that are guaranteed to be present
+on the global object as required by the language specification.
 
 Issues
 ------
